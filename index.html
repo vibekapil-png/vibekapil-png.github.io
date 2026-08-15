@@ -1,1146 +1,1475 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>VotoStory — Instagram Story Poll Promotion</title>
-
-  <meta name="description" content="VotoStory offers simple Instagram Story Poll promotion packages with USD pricing and an easy WhatsApp ordering process.">
-  <meta name="keywords" content="Instagram Story Poll promotion, Instagram poll promotion, Story Poll service, social media promotion">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="VotoStory — Instagram Story Poll Promotion">
-  <meta property="og:description" content="Choose an Instagram Story Poll promotion package and place your order easily.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f5ff;
-      color: #17132b;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
-    }
-
-    /* NAVBAR */
-
-    nav {
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid #e8e4f5;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 800;
-      color: #673cff;
-    }
-
-    .logo span {
-      color: #111;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      color: #673cff;
-    }
-
-    .nav-btn {
-      background: #673cff;
-      color: white !important;
-      padding: 11px 18px;
-      border-radius: 9px;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 80px 0 70px;
-      background:
-        radial-gradient(circle at top right, #e8ddff 0, transparent 35%),
-        linear-gradient(135deg, #faf9ff, #eee9ff);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e7deff;
-      color: #5931db;
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    h1 span {
-      color: #673cff;
-    }
-
-    .hero p {
-      color: #625d72;
-      max-width: 600px;
-      font-size: 17px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .primary-btn,
-    .secondary-btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: 800;
-      border: none;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .primary-btn {
-      background: #673cff;
-      color: white;
-      box-shadow: 0 10px 25px rgba(103,60,255,.22);
-    }
-
-    .primary-btn:hover {
-      transform: translateY(-2px);
-      background: #5830e8;
-    }
-
-    .secondary-btn {
-      background: white;
-      color: #673cff;
-      border: 1px solid #ddd5ff;
-    }
-
-    /* PHONE */
-
-    .phone {
-      background: #161225;
-      border-radius: 32px;
-      padding: 12px;
-      max-width: 330px;
-      margin: auto;
-      box-shadow: 0 25px 60px rgba(37,24,80,.25);
-    }
-
-    .phone-screen {
-      background: white;
-      border-radius: 24px;
-      padding: 25px 18px;
-      min-height: 480px;
-    }
-
-    .story-header {
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .poll-box {
-      background: linear-gradient(145deg,#7045ff,#9a7aff);
-      color: white;
-      padding: 25px 18px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .poll-box h3 {
-      font-size: 22px;
-      margin-bottom: 18px;
-    }
-
-    .poll-option {
-      background: white;
-      color: #332568;
-      padding: 11px;
-      border-radius: 12px;
-      margin-top: 10px;
-      font-weight: 700;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px,5vw,43px);
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #706b7d;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    /* BENEFITS */
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .benefit {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid #e8e3f6;
-    }
-
-    .benefit-icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .benefit h3 {
-      margin-bottom: 7px;
-    }
-
-    .benefit p {
-      color: #706b7d;
-      font-size: 14px;
-    }
-
-    /* PACKAGES */
-
-    .packages {
-      background: white;
-    }
-
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .package {
-      background: #fff;
-      border: 1px solid #e5e0f0;
-      border-radius: 18px;
-      padding: 25px;
-      position: relative;
-      transition: .2s;
-    }
-
-    .package:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(44,27,90,.10);
-    }
-
-    .package.popular {
-      border: 2px solid #673cff;
-    }
-
-    .popular-label {
-      position: absolute;
-      top: -13px;
-      right: 18px;
-      background: #673cff;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .package h3 {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .package .desc {
-      font-size: 13px;
-      color: #777184;
-      min-height: 42px;
-    }
-
-    .price {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 15px 0;
-    }
-
-    .order-btn {
-      width: 100%;
-      background: #673cff;
-      color: white;
-      border: none;
-      padding: 13px;
-      border-radius: 9px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .order-btn:hover {
-      background: #5830e8;
-    }
-
-    /* HOW */
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .step {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid #e8e3f6;
-    }
-
-    .number {
-      width: 38px;
-      height: 38px;
-      background: #673cff;
-      color: white;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .step p {
-      color: #706b7d;
-      margin-top: 7px;
-    }
-
-    /* ORDER */
-
-    .order-section {
-      background: #eeeaff;
-    }
-
-    .order-box {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 15px 45px rgba(40,20,90,.08);
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      margin: 15px 0 7px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ddd8e8;
-      border-radius: 9px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #673cff;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .total {
-      background: #f4f1ff;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 18px 0;
-      font-weight: 700;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* PAYMENT */
-
-    .payment-box {
-      margin-top: 25px;
-      background: #171225;
-      color: white;
-      padding: 25px;
-      border-radius: 18px;
-    }
-
-    .payment-box h3 {
-      font-size: 23px;
-      margin-bottom: 7px;
-    }
-
-    .payment-box > p {
-      color: #c5bfd6;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .payment-network {
-      background: #2a243b;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .wallet-address {
-      background: white;
-      color: #171225;
-      padding: 14px;
-      border-radius: 10px;
-      word-break: break-all;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .copy-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: 9px;
-      background: #f0b90b;
-      color: #111;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .copy-btn:hover {
-      background: #ffc928;
-    }
-
-    .payment-note {
-      color: #ffd36b !important;
-      font-size: 12px !important;
-      margin-top: 12px !important;
-      margin-bottom: 0 !important;
-    }
-
-    .paid-btn {
-      width: 100%;
-      margin-top: 12px;
-      background: #25d366;
-      color: white;
-      padding: 13px;
-      border: none;
-      border-radius: 9px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    /* FAQ */
-
-    .faq {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    details {
-      background: white;
-      border: 1px solid #e4dfef;
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 12px;
-    }
-
-    summary {
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    details p {
-      color: #706b7d;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    /* CTA */
-
-    .cta {
-      background: #171225;
-      color: white;
-      text-align: center;
-      border-radius: 25px;
-      padding: 55px 25px;
-    }
-
-    .cta h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: #c5bfd6;
-      margin-bottom: 25px;
-    }
-
-    /* TRUST */
-
-    .notice {
-      max-width: 800px;
-      margin: 25px auto 0;
-      background: #fff9e8;
-      border: 1px solid #f0dfaa;
-      color: #68551c;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 13px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #0f0c18;
-      color: white;
-      padding: 45px 0 25px;
-      margin-top: 60px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 30px;
-    }
-
-    footer h3 {
-      margin-bottom: 12px;
-    }
-
-    footer p,
-    footer a {
-      color: #aaa3b9;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid #292433;
-      margin-top: 30px;
-      padding-top: 20px;
-      color: #81798f;
-      font-size: 13px;
-      text-align: center;
-    }
-
-    /* MOBILE */
-
-    @media (max-width:800px) {
-
-      .nav-links a:not(.nav-btn) {
-        display: none;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-
-      .phone {
-        max-width: 300px;
-      }
-
-      .benefits,
-      .package-grid,
-      .steps,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      .package {
-        max-width: 500px;
-        margin: auto;
-        width: 100%;
-      }
-
-      .order-box {
-        padding: 20px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VotoStory — Instagram Story Poll Promotion</title>
+
+<meta name="description" content="VotoStory offers Instagram Story Poll promotion packages with simple USD pricing and WhatsApp ordering.">
+<meta name="keywords" content="Instagram Story Poll promotion, Instagram poll promotion, Story Poll service">
+<meta name="robots" content="index, follow">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f5ff;
+  color:#17132b;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #e8e4f5;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(10px);
+}
+
+.nav-inner{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+  color:#673cff;
+}
+
+.logo span{
+  color:#111;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav-links a:hover{
+  color:#673cff;
+}
+
+.nav-btn{
+  background:#673cff;
+  color:white!important;
+  padding:10px 17px;
+  border-radius:9px;
+}
+
+.language-select{
+  border:1px solid #ddd5ff;
+  background:white;
+  color:#333;
+  padding:9px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+  padding:80px 0 70px;
+  background:
+    radial-gradient(circle at top right,#e8ddff 0,transparent 35%),
+    linear-gradient(135deg,#faf9ff,#eee9ff);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:45px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#e7deff;
+  color:#5931db;
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(38px,6vw,64px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin-bottom:20px;
+}
+
+h1 span{
+  color:#673cff;
+}
+
+.hero p{
+  color:#625d72;
+  max-width:600px;
+  font-size:17px;
+  margin-bottom:28px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:10px;
+  font-weight:800;
+  border:none;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.primary-btn{
+  background:#673cff;
+  color:white;
+  box-shadow:0 10px 25px rgba(103,60,255,.22);
+}
+
+.primary-btn:hover{
+  transform:translateY(-2px);
+  background:#5830e8;
+}
+
+.secondary-btn{
+  background:white;
+  color:#673cff;
+  border:1px solid #ddd5ff;
+}
+
+/* PHONE */
+
+.phone{
+  background:#161225;
+  border-radius:32px;
+  padding:12px;
+  max-width:330px;
+  margin:auto;
+  box-shadow:0 25px 60px rgba(37,24,80,.25);
+}
+
+.phone-screen{
+  background:white;
+  border-radius:24px;
+  padding:25px 18px;
+  min-height:480px;
+}
+
+.story-header{
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.poll-box{
+  background:linear-gradient(145deg,#7045ff,#9a7aff);
+  color:white;
+  padding:25px 18px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.poll-box h3{
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.poll-option{
+  background:white;
+  color:#332568;
+  padding:11px;
+  border-radius:12px;
+  margin-top:10px;
+  font-weight:700;
+}
+
+/* SECTIONS */
+
+section{
+  padding:75px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:clamp(30px,5vw,43px);
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#706b7d;
+  max-width:650px;
+  margin:auto;
+}
+
+/* BENEFITS */
+
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.benefit{
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  border:1px solid #e8e3f6;
+}
+
+.benefit-icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.benefit h3{
+  margin-bottom:7px;
+}
+
+.benefit p{
+  color:#706b7d;
+  font-size:14px;
+}
+
+/* PACKAGES */
+
+.packages{
+  background:white;
+}
+
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.package{
+  background:#fff;
+  border:1px solid #e5e0f0;
+  border-radius:18px;
+  padding:25px;
+  position:relative;
+  transition:.2s;
+}
+
+.package:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(44,27,90,.10);
+}
+
+.package.popular{
+  border:2px solid #673cff;
+}
+
+.popular-label{
+  position:absolute;
+  top:-13px;
+  right:18px;
+  background:#673cff;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.package h3{
+  font-size:22px;
+  margin-bottom:4px;
+}
+
+.package .desc{
+  font-size:13px;
+  color:#777184;
+  min-height:42px;
+}
+
+.price{
+  font-size:30px;
+  font-weight:800;
+  margin:15px 0;
+}
+
+.order-btn{
+  width:100%;
+  background:#673cff;
+  color:white;
+  border:none;
+  padding:13px;
+  border-radius:9px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.order-btn:hover{
+  background:#5830e8;
+}
+
+/* HOW */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.step{
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  border:1px solid #e8e3f6;
+}
+
+.number{
+  width:38px;
+  height:38px;
+  background:#673cff;
+  color:white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.step p{
+  color:#706b7d;
+  margin-top:7px;
+}
+
+/* ORDER */
+
+.order-section{
+  background:#eeeaff;
+}
+
+.order-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 45px rgba(40,20,90,.08);
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  margin:15px 0 7px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd8e8;
+  border-radius:9px;
+  font-size:14px;
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#673cff;
+}
+
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.total{
+  background:#f4f1ff;
+  padding:15px;
+  border-radius:10px;
+  margin:18px 0;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* PAYMENT */
+
+.payment-box{
+  margin-top:25px;
+  background:#171225;
+  color:white;
+  padding:25px;
+  border-radius:18px;
+}
+
+.payment-box h3{
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.payment-box>p{
+  color:#c5bfd6;
+  font-size:14px;
+  margin-bottom:16px;
+}
+
+.payment-network{
+  background:#2a243b;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:12px;
+  font-weight:700;
+}
+
+.wallet-address{
+  background:white;
+  color:#171225;
+  padding:14px;
+  border-radius:10px;
+  word-break:break-all;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.copy-btn{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:9px;
+  background:#f0b90b;
+  color:#111;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.copy-btn:hover{
+  background:#ffc928;
+}
+
+.payment-note{
+  color:#ffd36b!important;
+  font-size:12px!important;
+  margin-top:12px!important;
+  margin-bottom:0!important;
+}
+
+.paid-btn{
+  width:100%;
+  margin-top:12px;
+  background:#25d366;
+  color:white;
+  padding:13px;
+  border:none;
+  border-radius:9px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+details{
+  background:white;
+  border:1px solid #e4dfef;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:12px;
+}
+
+summary{
+  font-weight:700;
+  cursor:pointer;
+}
+
+details p{
+  color:#706b7d;
+  margin-top:12px;
+  font-size:14px;
+}
+
+/* CTA */
+
+.cta{
+  background:#171225;
+  color:white;
+  text-align:center;
+  border-radius:25px;
+  padding:55px 25px;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#c5bfd6;
+  margin-bottom:25px;
+}
+
+/* NOTICE */
+
+.notice{
+  max-width:800px;
+  margin:25px auto 0;
+  background:#fff9e8;
+  border:1px solid #f0dfaa;
+  color:#68551c;
+  padding:16px;
+  border-radius:12px;
+  font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#0f0c18;
+  color:white;
+  padding:45px 0 25px;
+  margin-top:60px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:30px;
+}
+
+footer h3{
+  margin-bottom:12px;
+}
+
+footer p,
+footer a{
+  color:#aaa3b9;
+  font-size:14px;
+}
+
+footer a:hover{
+  color:white;
+}
+
+.copyright{
+  border-top:1px solid #292433;
+  margin-top:30px;
+  padding-top:20px;
+  color:#81798f;
+  font-size:13px;
+  text-align:center;
+}
+
+/* LANGUAGE NOTICE */
+
+.lang-note{
+  text-align:center;
+  font-size:11px;
+  color:#777184;
+  margin-top:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-links{
+    gap:8px;
+  }
+
+  .nav-links a:not(.nav-btn){
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:50px;
+  }
+
+  .phone{
+    max-width:300px;
+  }
+
+  .benefits,
+  .package-grid,
+  .steps,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  h1{
+    letter-spacing:-1px;
+  }
+
+  .package{
+    max-width:500px;
+    margin:auto;
+    width:100%;
+  }
+
+  .order-box{
+    padding:20px;
+  }
+
+  .language-select{
+    max-width:105px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- NAVBAR -->
 
-  <nav>
-    <div class="container nav-inner">
+<nav>
+<div class="container nav-inner">
 
-      <a href="#" class="logo">
-        Voto<span>Story</span>
-      </a>
+<a href="#" class="logo">
+Voto<span>Story</span>
+</a>
 
-      <div class="nav-links">
-        <a href="#packages">Packages</a>
-        <a href="#how">How It Works</a>
-        <a href="#faq">FAQ</a>
-        <a href="#order" class="nav-btn">Order Now</a>
-      </div>
+<div class="nav-links">
 
-    </div>
-  </nav>
+<a href="#packages" data-i18n="packagesNav">
+Packages
+</a>
 
-  <!-- HERO -->
+<a href="#how" data-i18n="howNav">
+How It Works
+</a>
 
-  <header class="hero">
+<a href="#faq" data-i18n="faqNav">
+FAQ
+</a>
 
-    <div class="container hero-grid">
+<a href="#order" class="nav-btn" data-i18n="orderNav">
+Order Now
+</a>
 
-      <div>
+<select id="languageSelect" class="language-select">
+<option value="auto">🌐 Auto</option>
+<option value="en">English</option>
+<option value="hi">हिन्दी</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="pt">Português</option>
+<option value="ar">العربية</option>
+<option value="ru">Русский</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="zh">中文</option>
+</select>
 
-        <span class="badge">
-          INSTAGRAM STORY POLL PROMOTION
-        </span>
+</div>
+</div>
+</nav>
 
-        <h1>
-          Give Your Story Poll
-          <span>More Attention.</span>
-        </h1>
 
-        <p>
-          Choose a simple Story Poll promotion package,
-          submit your details and complete your order through WhatsApp.
-        </p>
+<!-- HERO -->
 
-        <div class="hero-buttons">
+<header class="hero">
 
-          <a href="#packages" class="primary-btn">
-            View Poll Packages
-          </a>
+<div class="container hero-grid">
 
-          <a href="#how" class="secondary-btn">
-            How It Works
-          </a>
+<div>
 
-        </div>
+<span class="badge" data-i18n="badge">
+INSTAGRAM STORY POLL PROMOTION
+</span>
 
-      </div>
+<h1>
+<span data-i18n="heroLine1">Give Your Story Poll</span>
+<br>
+<span data-i18n="heroLine2">More Attention.</span>
+</h1>
 
-      <div class="phone">
+<p data-i18n="heroText">
+Choose a simple Story Poll promotion package,
+submit your details and complete your order through WhatsApp.
+</p>
 
-        <div class="phone-screen">
+<div class="hero-buttons">
 
-          <div class="story-header">
-            Instagram Story
-          </div>
+<a href="#packages" class="primary-btn" data-i18n="viewPackages">
+View Poll Packages
+</a>
 
-          <div class="poll-box">
+<a href="#how" class="secondary-btn" data-i18n="howButton">
+How It Works
+</a>
 
-            <h3>
-              Which one do you prefer?
-            </h3>
+</div>
 
-            <div class="poll-option">
-              Option A
-            </div>
+</div>
 
-            <div class="poll-option">
-              Option B
-            </div>
 
-          </div>
+<div class="phone">
 
-          <p style="text-align:center;margin-top:20px;color:#777;font-size:13px;">
-            Story Poll Promotion
-          </p>
+<div class="phone-screen">
 
-        </div>
+<div class="story-header">
+Instagram Story
+</div>
 
-      </div>
+<div class="poll-box">
 
-    </div>
+<h3>
+Which one do you prefer?
+</h3>
 
-  </header>
+<div class="poll-option">
+Option A
+</div>
 
-  <!-- BENEFITS -->
+<div class="poll-option">
+Option B
+</div>
 
-  <section>
+</div>
 
-    <div class="container">
+<p style="text-align:center;margin-top:20px;color:#777;font-size:13px;">
+Story Poll Promotion
+</p>
 
-      <div class="section-title">
+</div>
 
-        <h2>
-          Why VotoStory?
-        </h2>
+</div>
 
-        <p>
-          A simple ordering experience for Instagram Story Poll promotion.
-        </p>
+</div>
+</header>
 
-      </div>
 
-      <div class="benefits">
+<!-- BENEFITS -->
 
-        <div class="benefit">
+<section>
 
-          <div class="benefit-icon">
-            📊
-          </div>
+<div class="container">
 
-          <h3>
-            Poll Focused
-          </h3>
+<div class="section-title">
 
-          <p>
-            A service focused on Instagram Story Poll promotion.
-          </p>
+<h2 data-i18n="whyTitle">
+Why VotoStory?
+</h2>
 
-        </div>
+<p data-i18n="whyText">
+A simple ordering experience for Instagram Story Poll promotion.
+</p>
 
-        <div class="benefit">
+</div>
 
-          <div class="benefit-icon">
-            💵
-          </div>
+<div class="benefits">
 
-          <h3>
-            USD Pricing
-          </h3>
+<div class="benefit">
 
-          <p>
-            Simple packages with clear USD prices.
-          </p>
+<div class="benefit-icon">📊</div>
 
-        </div>
+<h3 data-i18n="benefit1Title">
+Poll Focused
+</h3>
 
-        <div class="benefit">
+<p data-i18n="benefit1Text">
+A service focused on Instagram Story Poll promotion.
+</p>
 
-          <div class="benefit-icon">
-            📱
-          </div>
+</div>
 
-          <h3>
-            Mobile Friendly
-          </h3>
 
-          <p>
-            Designed for customers using phones and mobile browsers.
-          </p>
+<div class="benefit">
 
-        </div>
+<div class="benefit-icon">💵</div>
 
-      </div>
+<h3 data-i18n="benefit2Title">
+USD Pricing
+</h3>
 
-    </div>
+<p data-i18n="benefit2Text">
+Simple packages with clear USD prices.
+</p>
 
-  </section>
+</div>
 
-  <!-- PACKAGES -->
 
-  <section class="packages" id="packages">
+<div class="benefit">
 
-    <div class="container">
+<div class="benefit-icon">📱</div>
 
-      <div class="section-title">
+<h3 data-i18n="benefit3Title">
+Mobile Friendly
+</h3>
 
-        <h2>
-          Story Poll Packages
-        </h2>
+<p data-i18n="benefit3Text">
+Designed for customers using phones and mobile browsers.
+</p>
 
-        <p>
-          Select the package that fits your promotion.
-        </p>
+</div>
 
-      </div>
+</div>
+</div>
+</section>
 
-      <div class="package-grid">
 
-        <div class="package">
+<!-- PACKAGES -->
 
-          <h3>20 Votes</h3>
+<section class="packages" id="packages">
 
-          <p class="desc">
-            Starter Poll Promotion
-          </p>
+<div class="container">
 
-          <div class="price">
-            $3
-          </div>
+<div class="section-title">
 
-          <button class="order-btn"
-            onclick="selectPackage('20 Votes',3)">
-            Order Now
-          </button>
+<h2 data-i18n="packagesTitle">
+Story Poll Packages
+</h2>
 
-        </div>
+<p data-i18n="packagesText">
+Select the package that fits your promotion.
+</p>
 
-        <div class="package">
+</div>
 
-          <h3>50 Votes</h3>
 
-          <p class="desc">
-            Small Poll Promotion
-          </p>
+<div class="package-grid">
 
-          <div class="price">
-            $7.50
-          </div>
 
-          <button class="order-btn"
-            onclick="selectPackage('50 Votes',7.5)">
-            Order Now
-          </button>
+<div class="package">
 
-        </div>
+<h3>20 Votes</h3>
 
-        <div class="package popular">
+<p class="desc" data-i18n="starter">
+Starter Poll Promotion
+</p>
 
-          <span class="popular-label">
-            POPULAR
-          </span>
+<div class="price">$3</div>
 
-          <h3>100 Votes</h3>
+<button class="order-btn"
+onclick="selectPackage('20 Votes',3)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-          <p class="desc">
-            Popular Choice
-          </p>
+</div>
 
-          <div class="price">
-            $15
-          </div>
 
-          <button class="order-btn"
-            onclick="selectPackage('100 Votes',15)">
-            Order Now
-          </button>
+<div class="package">
 
-        </div>
+<h3>50 Votes</h3>
 
-        <div class="package">
+<p class="desc" data-i18n="small">
+Small Poll Promotion
+</p>
 
-          <h3>250 Votes</h3>
+<div class="price">$7.50</div>
 
-          <p class="desc">
-            Bigger Poll Promotion
-          </p>
+<button class="order-btn"
+onclick="selectPackage('50 Votes',7.5)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-          <div class="price">
-            $37.50
-          </div>
+</div>
 
-          <button class="order-btn"
-            onclick="selectPackage('250 Votes',37.5)">
-            Order Now
-          </button>
 
-        </div>
+<div class="package popular">
 
-        <div class="package">
+<span class="popular-label" data-i18n="popular">
+POPULAR
+</span>
 
-          <h3>500 Votes</h3>
+<h3>100 Votes</h3>
 
-          <p class="desc">
-            Large Promotion
-          </p>
+<p class="desc" data-i18n="popularChoice">
+Popular Choice
+</p>
 
-          <div class="price">
-            $75
-          </div>
+<div class="price">$15</div>
 
-          <button class="order-btn"
-            onclick="selectPackage('500 Votes',75)">
-            Order Now
-          </button>
+<button class="order-btn"
+onclick="selectPackage('100 Votes',15)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-        </div>
+</div>
 
-        <div class="package">
 
-          <h3>1,000 Votes</h3>
+<div class="package">
 
-          <p class="desc">
-            Maximum listed package
-          </p>
+<h3>250 Votes</h3>
 
-          <div class="price">
-            $150
-          </div>
+<p class="desc" data-i18n="bigger">
+Bigger Poll Promotion
+</p>
 
-          <button class="order-btn"
-            onclick="selectPackage('1,000 Votes',150)">
-            Order Now
-          </button>
+<div class="price">$37.50</div>
 
-        </div>
+<button class="order-btn"
+onclick="selectPackage('250 Votes',37.5)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+<div class="package">
 
-  <!-- HOW IT WORKS -->
+<h3>500 Votes</h3>
 
-  <section id="how">
+<p class="desc" data-i18n="large">
+Large Promotion
+</p>
 
-    <div class="container">
+<div class="price">$75</div>
 
-      <div class="section-title">
+<button class="order-btn"
+onclick="selectPackage('500 Votes',75)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-        <h2>
-          How Ordering Works
-        </h2>
+</div>
 
-        <p>
-          Three simple steps.
-        </p>
 
-      </div>
+<div class="package">
 
-      <div class="steps">
+<h3>1,000 Votes</h3>
 
-        <div class="step">
+<p class="desc" data-i18n="maximum">
+Maximum listed package
+</p>
 
-          <div class="number">
-            01
-          </div>
+<div class="price">$150</div>
 
-          <h3>
-            Choose Package
-          </h3>
+<button class="order-btn"
+onclick="selectPackage('1,000 Votes',150)"
+data-i18n="orderNow">
+Order Now
+</button>
 
-          <p>
-            Select the Story Poll package you want.
-          </p>
+</div>
 
-        </div>
+</div>
+</div>
+</section>
 
-        <div class="step">
 
-          <div class="number">
-            02
-          </div>
+<!-- HOW IT WORKS -->
 
-          <h3>
-            Place Order
-          </h3>
+<section id="how">
 
-          <p>
-            Enter your name, Instagram username and Story Poll link.
-          </p>
+<div class="container">
 
-        </div>
+<div class="section-title">
 
-        <div class="step">
+<h2 data-i18n="howTitle">
+How Ordering Works
+</h2>
 
-          <div class="number">
-            03
-          </div>
+<p data-i18n="threeSteps">
+Three simple steps.
+</p>
 
-          <h3>
-            Pay & Confirm
-          </h3>
+</div>
 
-          <p>
-            Pay the selected amount in USDT and send the order details through WhatsApp.
-          </p>
 
-        </div>
+<div class="steps">
 
-      </div>
 
-    </div>
+<div class="step">
 
-  </section>
+<div class="number">01</div>
 
-  <!-- ORDER -->
+<h3 data-i18n="step1Title">
+Choose Package
+</h3>
 
-  <section class="order-section" id="order">
+<p data-i18n="step1Text">
+Select the Story Poll package you want.
+</p>
 
-    <div class="container">
+</div>
 
-      <div class="section-title">
 
-        <h2>
-          Place Your Order
-        </h2>
+<div class="step">
 
-        <p>
-          Fill in your details and choose your package.
-        </p>
+<div class="number">02</div>
 
-      </div>
+<h3 data-i18n="step2Title">
+Place Order
+</h3>
 
-      <div class="order-box">
+<p data-i18n="step2Text">
+Enter your name, Instagram username and Story Poll link.
+</p>
 
-        <label for="package">
-          Choose Package
-        </label>
+</div>
 
-        <select id="package" onchange="updateTotal()">
 
-          <option value="20 Votes|3">
-            20 Votes — $3
-          </option>
+<div class="step">
 
-          <option value="50 Votes|7.5">
-            50 Votes — $7.50
-          </option>
+<div class="number">03</div>
 
-          <option value="100 Votes|15">
-            100 Votes — $15
-          </option>
+<h3 data-i18n="step3Title">
+Pay & Confirm
+</h3>
 
-          <option value="250 Votes|37.5">
-            250 Votes — $37.50
-          </option>
+<p data-i18n="step3Text">
+Pay the selected amount in USDT and send the order details through WhatsApp.
+</p>
 
-          <option value="500 Votes|75">
-            500 Votes — $75
-          </option>
+</div>
 
-          <option value="1,000 Votes|150">
-            1,000 Votes — $150
-          </option>
+</div>
+</div>
+</section>
 
-        </select>
 
-        <label for="name">
-          Your Name
-        </label>
+<!-- ORDER -->
 
-        <input
-          id="name"
-          type="text"
-          placeholder="Enter your name"
-        >
+<section class="order-section" id="order">
 
-        <label for="instagram">
-          Instagram Username
-        </label>
+<div class="container">
 
-        <input
-          id="instagram"
-          type="text"
-          placeholder="@yourusername"
-        >
+<div class="section-title">
 
-        <label for="link">
-          Story Poll Link
-        </label>
+<h2 data-i18n="orderTitle">
+Place Your Order
+</h2>
 
-        <input
-          id="link"
-          type="url"
-          placeholder="Paste your Story Poll link"
-        >
+<p data-i18n="orderText">
+Fill in your details and choose your package.
+</p>
 
-        <label for="notes">
-          Additional Notes
-        </label>
+</div>
 
-        <textarea
-          id="notes"
-          placeholder="Any additional information..."
-        ></textarea>
 
-        <div class="total">
+<div class="order-box">
 
-          <span>
-            Total
-          </span>
 
-          <span id="total">
-            $3
-          </span>
+<label for="package" data-i18n="choosePackage">
+Choose Package
+</label>
 
-        </div>
+<select id="package" onchange="updateTotal()">
 
-        <!-- BINANCE PAYMENT -->
+<option value="20 Votes|3">
+20 Votes — $3
+</option>
 
-        <div class="payment-box">
+<option value="50 Votes|7.5">
+50 Votes — $7.50
+</option>
 
-          <h3>
-            
+<option value="100 Votes|15">
+100 Votes — $15
+</option>
+
+<option value="250 Votes|37.5">
+250 Votes — $37.50
+</option>
+
+<option value="500 Votes|75">
+500 Votes — $75
+</option>
+
+<option value="1,000 Votes|150">
+1,000 Votes — $150
+</option>
+
+</select>
+
+
+<label for="name" data-i18n="yourName">
+Your Name
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Enter your name"
+data-i18n-placeholder="namePlaceholder"
+>
+
+
+<label for="instagram">
+Instagram Username
+</label>
+
+<input
+id="instagram"
+type="text"
+placeholder="@yourusername"
+>
+
+
+<label for="link" data-i18n="storyLink">
+Story Poll Link
+</label>
+
+<input
+id="link"
+type="url"
+placeholder="Paste your Story Poll link"
+data-i18n-placeholder="linkPlaceholder"
+>
+
+
+<label for="notes" data-i18n="notesLabel">
+Additional Notes
+</label>
+
+<textarea
+id="notes"
+placeholder="Any additional information..."
+data-i18n-placeholder="notesPlaceholder"
+></textarea>
+
+
+<div class="total">
+
+<span data-i18n="totalText">
+Total
+</span>
+
+<span id="total">
+$3
+</span>
+
+</div>
+
+
+<!-- BINANCE PAYMENT -->
+
+<div class="payment-box">
+
+<h3 data-i18n="paymentTitle">
+💳 Pay with Binance
+</h3>
+
+<p data-i18n="paymentText">
+Pay the exact order amount in USDT using the network below.
+</p>
+
+<div class="payment-network">
+USDT — BNB Smart Chain (BEP20)
+</div>
+
+<div class="wallet-address" id="walletAddress">
+0xf76e5a7928646a42893D25d2A139D40058B1428f
+</div>
+
+<button
+class="copy-btn"
+type="button"
+onclick="copyWalletAddress()"
+data-i18n="copyAddress">
+📋 Copy Payment Address
+</button>
+
+<p class="payment-note" data-i18n="paymentWarning">
+⚠️ Send USDT only through BNB Smart Chain (BEP20).
+Using another network may result in permanent loss of funds.
+</p>
+
+<button
+class="paid-btn"
+type="button"
+onclick="sendPaymentConfirmation()"
+data-i18n="paidButton">
+✅ I Have Paid — Send Confirmation
+</button>
+
+</div>
+
+
+<div style="margin-top:18px;">
+
+<button
+class="primary-btn"
+style="width:100%;"
+type="button"
+onclick="sendOrder()"
+data-i18n="whatsappOrder">
+Order via WhatsApp
+</button>
+
+</div>
+
+
+<div class="notice" data-i18n="manualNotice">
+Payment is checked manually before an order is confirmed.
+Please make sure the payment network and amount are correct.
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2 data-i18n="faqTitle">
+Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary data-i18n="faq1Q">
+What information do I need to place an order?
+</summary>
+
+<p data-i18n="faq1A">
+You need your name, Instagram username and the relevant Story Poll link.
+</p>
+
+</details>
+
+
+<details>
+
+<summary data-i18n="faq2Q">
+How do I pay?
+</summary>
+
+<p data-i18n="faq2A">
+Payment is accepted in USDT using the BNB Smart Chain (BEP20) network.
+</p>
+
+</details>
+
+
+<details>
+
+<summary data-i18n="faq3Q">
+What happens after payment?
+</summary>
+
+<p data-i18n="faq3A">
+Send your payment confirmation and order details through WhatsApp.
+Payment is manually checked before confirmation.
+</p>
+
+</details>
+
+
+<details>
+
+<summary data-i18n="faq4Q">
+Can I choose another package?
+</summary>
+
+<p data-i18n="faq4A">
+Yes. Select another package before submitting your order.
+</p>
+
+</details>
+
+
+<details>
+
+<summary data-i18n="faq5Q">
+Are results guaranteed?
+</summary>
+
+<p data-i18n="faq5A">
+Results may depend on Instagram, campaign conditions and other factors.
+No guaranteed outcome should be assumed unless specifically stated.
+</p>
+
+</details>
+
+</div>
+</div>
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<h2 data-i18n="ctaTitle">
+Ready to Promote Your Poll?
+</h2>
+
+<p data-i18n="ctaText">
+Choose your package and start your order.
+</p>
+
+<a href="#packages" class="primary-btn" data-i18n="viewPackages">
+View Poll Packages
+</a>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+VotoStory
+</h3>
+
+<p data-i18n="footerText">
+Instagram Story Poll promotion services with simple packages,
+USD pricing and an easy ordering experience.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 data-i18n="quickLinks">
+Quick Links
+</h3>
+
+<p>
+<a href="#packages" data-i18n="packagesNav">
+Poll Packages
+</a>
+</p>
+
+<p>
+<a href="#how" data-i18n="howNav">
+How It Works
+</a>
+</p>
+
+<p>
+<a href="#order" data-i18n="orderNav">
+Place Order
+</a>
+</p>
+
+<p>
+<a href="#faq" data-i18n="faqNav">
+FAQ
+</a>
+</p>
+
+</div>
+
+
+<div>
+
+<h3 data-i18n="services">
+Services
+</h3>
+
+<p>
+Instagram Story Poll
+</p>
+
+<p>
+Poll Promotion
+</p>
+
+<p>
+Social Media Promotion
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 VotoStory. All rights reserved.
+</div>
+
+</div>
+</footer>
+
+
+<script>
+
+/* =========================
+   YOUR DETAILS
+========================= */
+
+const whatsapp = "917987674763";
+
+const walletAddress =
+"0xf76e5a7928646a42893D25d2A139D40058B1428f";
+
+
+/* =========================
+   PACKAGE SELECT
+====
