@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>VotoStory — Instagram Story Poll Promotion</title>
-  <meta name="description" content="VotoStory - Instagram Story Poll Promotion and Social Media Marketing Services.">
+
+  <meta name="description" content="VotoStory offers simple Instagram Story Poll promotion packages with USD pricing and an easy WhatsApp ordering process.">
+  <meta name="keywords" content="Instagram Story Poll promotion, Instagram poll promotion, Story Poll service, social media promotion">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="VotoStory — Instagram Story Poll Promotion">
+  <meta property="og:description" content="Choose an Instagram Story Poll promotion package and place your order easily.">
+  <meta property="og:type" content="website">
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -25,18 +37,27 @@
       color: inherit;
     }
 
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
     .container {
       width: min(1100px, 92%);
       margin: auto;
     }
 
     /* NAVBAR */
+
     nav {
-      background: #ffffff;
+      background: rgba(255,255,255,.96);
       border-bottom: 1px solid #e8e4f5;
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
@@ -59,22 +80,27 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #673cff;
     }
 
     .nav-btn {
       background: #673cff;
-      color: white;
+      color: white !important;
       padding: 11px 18px;
       border-radius: 9px;
     }
 
     /* HERO */
+
     .hero {
-      padding: 75px 0 65px;
+      padding: 80px 0 70px;
       background:
         radial-gradient(circle at top right, #e8ddff 0, transparent 35%),
         linear-gradient(135deg, #faf9ff, #eee9ff);
@@ -94,7 +120,7 @@
       padding: 7px 13px;
       border-radius: 30px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
@@ -127,15 +153,21 @@
       display: inline-block;
       padding: 14px 22px;
       border-radius: 10px;
-      font-weight: 700;
+      font-weight: 800;
       border: none;
       cursor: pointer;
+      transition: .2s;
     }
 
     .primary-btn {
       background: #673cff;
       color: white;
-      box-shadow: 0 10px 25px rgba(103, 60, 255, .22);
+      box-shadow: 0 10px 25px rgba(103,60,255,.22);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: #5830e8;
     }
 
     .secondary-btn {
@@ -144,14 +176,15 @@
       border: 1px solid #ddd5ff;
     }
 
-    /* PHONE CARD */
+    /* PHONE */
+
     .phone {
       background: #161225;
       border-radius: 32px;
       padding: 12px;
       max-width: 330px;
       margin: auto;
-      box-shadow: 0 25px 60px rgba(37, 24, 80, .25);
+      box-shadow: 0 25px 60px rgba(37,24,80,.25);
     }
 
     .phone-screen {
@@ -167,7 +200,7 @@
     }
 
     .poll-box {
-      background: linear-gradient(145deg, #7045ff, #9a7aff);
+      background: linear-gradient(145deg,#7045ff,#9a7aff);
       color: white;
       padding: 25px 18px;
       border-radius: 20px;
@@ -188,7 +221,8 @@
       font-weight: 700;
     }
 
-    /* SECTION */
+    /* SECTIONS */
+
     section {
       padding: 75px 0;
     }
@@ -199,7 +233,7 @@
     }
 
     .section-title h2 {
-      font-size: clamp(30px, 5vw, 43px);
+      font-size: clamp(30px,5vw,43px);
       margin-bottom: 10px;
     }
 
@@ -210,9 +244,10 @@
     }
 
     /* BENEFITS */
+
     .benefits {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 20px;
     }
 
@@ -238,13 +273,14 @@
     }
 
     /* PACKAGES */
+
     .packages {
-      background: #ffffff;
+      background: white;
     }
 
     .package-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 18px;
     }
 
@@ -259,7 +295,7 @@
 
     .package:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(44, 27, 90, .10);
+      box-shadow: 0 15px 35px rgba(44,27,90,.10);
     }
 
     .package.popular {
@@ -306,10 +342,15 @@
       cursor: pointer;
     }
 
-    /* HOW IT WORKS */
+    .order-btn:hover {
+      background: #5830e8;
+    }
+
+    /* HOW */
+
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 20px;
     }
 
@@ -332,7 +373,13 @@
       margin-bottom: 15px;
     }
 
-    /* FORM */
+    .step p {
+      color: #706b7d;
+      margin-top: 7px;
+    }
+
+    /* ORDER */
+
     .order-section {
       background: #eeeaff;
     }
@@ -343,7 +390,7 @@
       background: white;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 15px 45px rgba(40, 20, 90, .08);
+      box-shadow: 0 15px 45px rgba(40,20,90,.08);
     }
 
     label {
@@ -364,15 +411,15 @@
       outline: none;
     }
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
     input:focus,
     select:focus,
     textarea:focus {
       border-color: #673cff;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
     }
 
     .total {
@@ -385,7 +432,81 @@
       justify-content: space-between;
     }
 
+    /* PAYMENT */
+
+    .payment-box {
+      margin-top: 25px;
+      background: #171225;
+      color: white;
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    .payment-box h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .payment-box > p {
+      color: #c5bfd6;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .payment-network {
+      background: #2a243b;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .wallet-address {
+      background: white;
+      color: #171225;
+      padding: 14px;
+      border-radius: 10px;
+      word-break: break-all;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .copy-btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 9px;
+      background: #f0b90b;
+      color: #111;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #ffc928;
+    }
+
+    .payment-note {
+      color: #ffd36b !important;
+      font-size: 12px !important;
+      margin-top: 12px !important;
+      margin-bottom: 0 !important;
+    }
+
+    .paid-btn {
+      width: 100%;
+      margin-top: 12px;
+      background: #25d366;
+      color: white;
+      padding: 13px;
+      border: none;
+      border-radius: 9px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
     /* FAQ */
+
     .faq {
       max-width: 800px;
       margin: auto;
@@ -411,6 +532,7 @@
     }
 
     /* CTA */
+
     .cta {
       background: #171225;
       color: white;
@@ -429,7 +551,21 @@
       margin-bottom: 25px;
     }
 
+    /* TRUST */
+
+    .notice {
+      max-width: 800px;
+      margin: 25px auto 0;
+      background: #fff9e8;
+      border: 1px solid #f0dfaa;
+      color: #68551c;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
     /* FOOTER */
+
     footer {
       background: #0f0c18;
       color: white;
@@ -453,6 +589,10 @@
       font-size: 14px;
     }
 
+    footer a:hover {
+      color: white;
+    }
+
     .copyright {
       border-top: 1px solid #292433;
       margin-top: 30px;
@@ -463,7 +603,9 @@
     }
 
     /* MOBILE */
-    @media (max-width: 800px) {
+
+    @media (max-width:800px) {
+
       .nav-links a:not(.nav-btn) {
         display: none;
       }
@@ -500,6 +642,10 @@
         margin: auto;
         width: 100%;
       }
+
+      .order-box {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -507,9 +653,13 @@
 <body>
 
   <!-- NAVBAR -->
+
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">Voto<span>Story</span></a>
+
+      <a href="#" class="logo">
+        Voto<span>Story</span>
+      </a>
 
       <div class="nav-links">
         <a href="#packages">Packages</a>
@@ -517,15 +667,21 @@
         <a href="#faq">FAQ</a>
         <a href="#order" class="nav-btn">Order Now</a>
       </div>
+
     </div>
   </nav>
 
   <!-- HERO -->
+
   <header class="hero">
+
     <div class="container hero-grid">
 
       <div>
-        <span class="badge">INSTAGRAM STORY POLL PROMOTION</span>
+
+        <span class="badge">
+          INSTAGRAM STORY POLL PROMOTION
+        </span>
 
         <h1>
           Give Your Story Poll
@@ -533,410 +689,458 @@
         </h1>
 
         <p>
-          Promote your Instagram Story Poll with simple packages,
-          transparent pricing and an easy ordering process.
+          Choose a simple Story Poll promotion package,
+          submit your details and complete your order through WhatsApp.
         </p>
 
         <div class="hero-buttons">
-          <a href="#packages" class="primary-btn">View Poll Packages</a>
-          <a href="#how" class="secondary-btn">How It Works</a>
+
+          <a href="#packages" class="primary-btn">
+            View Poll Packages
+          </a>
+
+          <a href="#how" class="secondary-btn">
+            How It Works
+          </a>
+
         </div>
+
       </div>
 
       <div class="phone">
+
         <div class="phone-screen">
-          <div class="story-header">Instagram Story</div>
+
+          <div class="story-header">
+            Instagram Story
+          </div>
 
           <div class="poll-box">
-            <h3>Which one do you prefer?</h3>
 
-            <div class="poll-option">Option A</div>
-            <div class="poll-option">Option B</div>
+            <h3>
+              Which one do you prefer?
+            </h3>
+
+            <div class="poll-option">
+              Option A
+            </div>
+
+            <div class="poll-option">
+              Option B
+            </div>
+
           </div>
 
           <p style="text-align:center;margin-top:20px;color:#777;font-size:13px;">
             Story Poll Promotion
           </p>
+
         </div>
+
       </div>
 
     </div>
+
   </header>
 
   <!-- BENEFITS -->
+
   <section>
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Why VotoStory?</h2>
+
+        <h2>
+          Why VotoStory?
+        </h2>
+
         <p>
-          A simple way to organize your Instagram Story Poll promotion.
+          A simple ordering experience for Instagram Story Poll promotion.
         </p>
+
       </div>
 
       <div class="benefits">
 
         <div class="benefit">
-          <div class="benefit-icon">📊</div>
-          <h3>Poll Focused</h3>
+
+          <div class="benefit-icon">
+            📊
+          </div>
+
+          <h3>
+            Poll Focused
+          </h3>
+
           <p>
-            Our main service is designed specifically around Instagram Story Poll promotion.
+            A service focused on Instagram Story Poll promotion.
           </p>
+
         </div>
 
         <div class="benefit">
-          <div class="benefit-icon">💰</div>
-          <h3>Clear Pricing</h3>
+
+          <div class="benefit-icon">
+            💵
+          </div>
+
+          <h3>
+            USD Pricing
+          </h3>
+
           <p>
-            Choose a package before placing your order. No confusing pricing.
+            Simple packages with clear USD prices.
           </p>
+
         </div>
 
         <div class="benefit">
-          <div class="benefit-icon">📱</div>
-          <h3>Mobile Friendly</h3>
+
+          <div class="benefit-icon">
+            📱
+          </div>
+
+          <h3>
+            Mobile Friendly
+          </h3>
+
           <p>
-            Browse packages and place your order easily from your phone.
+            Designed for customers using phones and mobile browsers.
           </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- PACKAGES -->
+
   <section class="packages" id="packages">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Story Poll Packages</h2>
+
+        <h2>
+          Story Poll Packages
+        </h2>
+
         <p>
           Select the package that fits your promotion.
         </p>
+
       </div>
 
       <div class="package-grid">
 
         <div class="package">
+
           <h3>20 Votes</h3>
-          <p class="desc">Starter Poll Promotion</p>
-          <div class="price">$3</div>
-          <button class="order-btn" onclick="selectPackage('20 Votes', 3)">
+
+          <p class="desc">
+            Starter Poll Promotion
+          </p>
+
+          <div class="price">
+            $3
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('20 Votes',3)">
             Order Now
           </button>
+
         </div>
 
         <div class="package">
+
           <h3>50 Votes</h3>
-          <p class="desc">Small Poll Promotion</p>
-          <div class="price">$7.50</div>
-          <button class="order-btn" onclick="selectPackage('50 Votes', 7.5)">
+
+          <p class="desc">
+            Small Poll Promotion
+          </p>
+
+          <div class="price">
+            $7.50
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('50 Votes',7.5)">
             Order Now
           </button>
+
         </div>
 
         <div class="package popular">
-          <span class="popular-label">POPULAR</span>
+
+          <span class="popular-label">
+            POPULAR
+          </span>
+
           <h3>100 Votes</h3>
-          <p class="desc">Popular Choice</p>
-          <div class="price">$15</div>
-          <button class="order-btn" onclick="selectPackage('100 Votes', 15)">
+
+          <p class="desc">
+            Popular Choice
+          </p>
+
+          <div class="price">
+            $15
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('100 Votes',15)">
             Order Now
           </button>
+
         </div>
 
         <div class="package">
+
           <h3>250 Votes</h3>
-          <p class="desc">Bigger Poll Promotion</p>
-          <div class="price">$37.50</div>
-          <button class="order-btn" onclick="selectPackage('250 Votes', 37.5)">
+
+          <p class="desc">
+            Bigger Poll Promotion
+          </p>
+
+          <div class="price">
+            $37.50
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('250 Votes',37.5)">
             Order Now
           </button>
+
         </div>
 
         <div class="package">
+
           <h3>500 Votes</h3>
-          <p class="desc">Large Promotion</p>
-          <div class="price">$75</div>
-          <button class="order-btn" onclick="selectPackage('500 Votes', 75)">
+
+          <p class="desc">
+            Large Promotion
+          </p>
+
+          <div class="price">
+            $75
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('500 Votes',75)">
             Order Now
           </button>
+
         </div>
 
         <div class="package">
+
           <h3>1,000 Votes</h3>
-          <p class="desc">Maximum listed package</p>
-          <div class="price">$150</div>
-          <button class="order-btn" onclick="selectPackage('1,000 Votes', 150)">
+
+          <p class="desc">
+            Maximum listed package
+          </p>
+
+          <div class="price">
+            $150
+          </div>
+
+          <button class="order-btn"
+            onclick="selectPackage('1,000 Votes',150)">
             Order Now
           </button>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- HOW IT WORKS -->
+
   <section id="how">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>How Ordering Works</h2>
-        <p>Three simple steps.</p>
+
+        <h2>
+          How Ordering Works
+        </h2>
+
+        <p>
+          Three simple steps.
+        </p>
+
       </div>
 
       <div class="steps">
 
         <div class="step">
-          <div class="number">01</div>
-          <h3>Choose Package</h3>
-          <p>Select the Story Poll package you want.</p>
+
+          <div class="number">
+            01
+          </div>
+
+          <h3>
+            Choose Package
+          </h3>
+
+          <p>
+            Select the Story Poll package you want.
+          </p>
+
         </div>
 
         <div class="step">
-          <div class="number">02</div>
-          <h3>Place Order</h3>
-          <p>Enter your Instagram username and Story Poll details.</p>
+
+          <div class="number">
+            02
+          </div>
+
+          <h3>
+            Place Order
+          </h3>
+
+          <p>
+            Enter your name, Instagram username and Story Poll link.
+          </p>
+
         </div>
 
         <div class="step">
-          <div class="number">03</div>
-          <h3>Confirm & Pay</h3>
-          <p>Send the order details through WhatsApp and follow the payment instructions.</p>
+
+          <div class="number">
+            03
+          </div>
+
+          <h3>
+            Pay & Confirm
+          </h3>
+
+          <p>
+            Pay the selected amount in USDT and send the order details through WhatsApp.
+          </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- ORDER -->
+
   <section class="order-section" id="order">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Place Your Order</h2>
-        <p>Fill in the details below.</p>
+
+        <h2>
+          Place Your Order
+        </h2>
+
+        <p>
+          Fill in your details and choose your package.
+        </p>
+
       </div>
 
       <div class="order-box">
 
-        <label>Choose Package</label>
+        <label for="package">
+          Choose Package
+        </label>
 
         <select id="package" onchange="updateTotal()">
-          <option value="20 Votes|3">20 Votes — $3</option>
-          <option value="50 Votes|7.5">50 Votes — $7.50</option>
-          <option value="100 Votes|15">100 Votes — $15</option>
-          <option value="250 Votes|37.5">250 Votes — $37.50</option>
-          <option value="500 Votes|75">500 Votes — $75</option>
-          <option value="1,000 Votes|150">1,000 Votes — $150</option>
+
+          <option value="20 Votes|3">
+            20 Votes — $3
+          </option>
+
+          <option value="50 Votes|7.5">
+            50 Votes — $7.50
+          </option>
+
+          <option value="100 Votes|15">
+            100 Votes — $15
+          </option>
+
+          <option value="250 Votes|37.5">
+            250 Votes — $37.50
+          </option>
+
+          <option value="500 Votes|75">
+            500 Votes — $75
+          </option>
+
+          <option value="1,000 Votes|150">
+            1,000 Votes — $150
+          </option>
+
         </select>
 
-        <label>Your Name</label>
-        <input id="name" type="text" placeholder="Enter your name">
+        <label for="name">
+          Your Name
+        </label>
 
-        <label>Instagram Username</label>
-        <input id="instagram" type="text" placeholder="@yourusername">
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter your name"
+        >
 
-        <label>Story Poll Link</label>
-        <input id="link" type="url" placeholder="Paste your Story Poll link">
+        <label for="instagram">
+          Instagram Username
+        </label>
 
-        <label>Additional Notes</label>
-        <textarea id="notes" placeholder="Any additional information..."></textarea>
+        <input
+          id="instagram"
+          type="text"
+          placeholder="@yourusername"
+        >
+
+        <label for="link">
+          Story Poll Link
+        </label>
+
+        <input
+          id="link"
+          type="url"
+          placeholder="Paste your Story Poll link"
+        >
+
+        <label for="notes">
+          Additional Notes
+        </label>
+
+        <textarea
+          id="notes"
+          placeholder="Any additional information..."
+        ></textarea>
 
         <div class="total">
-          <span>Total</span>
-          <span id="total">$3</span>
+
+          <span>
+            Total
+          </span>
+
+          <span id="total">
+            $3
+          </span>
+
         </div>
 
-        <button class="primary-btn" style="width:100%;" onclick="sendOrder()">
-          Order via WhatsApp
-        </button>
+        <!-- BINANCE PAYMENT -->
 
-      </div>
-    </div>
-  </section>
+        <div class="payment-box">
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq">
-
-        <details>
-          <summary>What information do I need to place an order?</summary>
-          <p>
-            You will need your name, Instagram username and the relevant Story Poll link.
-          </p>
-        </details>
-
-        <details>
-          <summary>Can I choose a different package later?</summary>
-          <p>
-            Yes. Simply select another package before submitting your order.
-          </p>
-        </details>
-
-        <details>
-          <summary>How do I contact VotoStory?</summary>
-          <p>
-            Use the WhatsApp order button or the contact details provided by VotoStory.
-          </p>
-        </details>
-
-        <details>
-          <summary>Are results guaranteed?</summary>
-          <p>
-            Results can depend on platform conditions and the specific promotion. Avoid promising
-            guaranteed outcomes unless you can actually provide them.
-          </p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section>
-    <div class="container">
-      <div class="cta">
-
-        <h2>Ready to Promote Your Poll?</h2>
-
-        <p>
-          Choose your package and start your order.
-        </p>
-
-        <a href="#packages" class="primary-btn">
-          View Poll Packages
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-          <h3>VotoStory</h3>
-          <p>
-            Instagram Story Poll promotion services with simple packages
-            and an easy ordering experience.
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-          <p><a href="#packages">Poll Packages</a></p>
-          <p><a href="#how">How It Works</a></p>
-          <p><a href="#order">Place Order</a></p>
-          <p><a href="#faq">FAQ</a></p>
-        </div>
-
-        <div>
-          <h3>Services</h3>
-          <p>Instagram Story Poll</p>
-          <p>Poll Promotion</p>
-          <p>Social Media Promotion</p>
-        </div>
-
-      </div>
-
-      <div class="copyright">
-        © 2026 VotoStory. All rights reserved.
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-
-    function selectPackage(name, price) {
-      const select = document.getElementById("package");
-
-      for (let i = 0; i < select.options.length; i++) {
-        if (select.options[i].value.startsWith(name + "|")) {
-          select.selectedIndex = i;
-          break;
-        }
-      }
-
-      updateTotal();
-
-      document.getElementById("order").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-
-    function updateTotal() {
-      const value = document.getElementById("package").value;
-      const price = value.split("|")[1];
-
-      document.getElementById("total").innerText =
-        "$" + Number(price).toFixed(2).replace(".00", "");
-    }
-
-    function sendOrder() {
-
-      const selected = document.getElementById("package").value.split("|");
-
-      const packageName = selected[0];
-      const price = selected[1];
-
-      const name = document.getElementById("name").value.trim();
-      const instagram = document.getElementById("instagram").value.trim();
-      const link = document.getElementById("link").value.trim();
-      const notes = document.getElementById("notes").value.trim();
-
-      if (!name || !instagram || !link) {
-        alert("Please fill in your name, Instagram username and Story Poll link.");
-        return;
-      }
-
-      /*
-        IMPORTANT:
-        Replace YOUR_WHATSAPP_NUMBER with your WhatsApp number.
-
-        Example:
-        const whatsapp = "919876543210";
-      */
-
-      const whatsapp = "YOUR_WHATSAPP_NUMBER";
-
-      const message =
-`Hello VotoStory!
-
-I want to place an Instagram Story Poll promotion order.
-
-Package: ${packageName}
-Price: $${price}
-
-Name: ${name}
-Instagram: ${instagram}
-Story Poll Link: ${link}
-
-Notes:
-${notes || "No additional notes."}`;
-
-      if (whatsapp === "YOUR_WHATSAPP_NUMBER") {
-        alert("Please add your WhatsApp number in the code first.");
-        return;
-      }
-
-      window.open(
-        "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(message),
-        "_blank"
-      );
-    }
-
-  </script>
-
-</body>
-</html>
+          <h3>
+            
